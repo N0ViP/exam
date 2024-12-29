@@ -10,8 +10,8 @@ int main(int ac, char **av)
 			(*av)++;
 		while ((*av)[i] && (*av)[i] != ' ' && (*av)[i] != '\t')
 			i++;
-		if (i)
-			write(1, *av, i);
+		write(1, *av, i);
 	}
 	write(1, "\n", 1);
+	return (1);
 }

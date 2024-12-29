@@ -17,15 +17,11 @@ int ft_index(char *base, int str_base, char c)
 int ft_atoi_base(char *str, int str_base)
 {
 	int res = 0;
-	int sign = 1;
+	int sign = 0;
 	char *hex = "0123456789abcdef";
 	char *HEX = "0123456789ABCDEF";
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
+	sign = (*str == '-') ? -1 : 1;
+	str += (*str == '-' || *str == '+');
 	while (*str && (ft_index(hex, str_base, *str) != -1|| ft_index(HEX, str_base, *str) != -1))
 	{
 		if (*str >= 97 && *str <= 122)
